@@ -145,7 +145,7 @@ Start by cloning this repo to a directory of your choice.
 Using the CI pipeline scripts, locally you would just call the zsh script. By default this builds a universal binary for both Intel and Apple Silicon. To build for a specific architecture please see `.github/scripts/.build.zsh` for the `-arch` options.
 
 ```sh
-$ ./.github/scripts/build-macos -c Release
+./.github/scripts/build-macos -c Release
 ```
 
 #### Install
@@ -155,7 +155,7 @@ The above script should succeed and the plugin files (e.g. `obs-backgroundremova
 To get `.pkg` installer file, run for example
 
 ```sh
-$ ./.github/scripts/package-macos -c Release
+./.github/scripts/package-macos -c Release
 ```
 
 (Note that maybe the outputs will be in the `Release` folder and not the `install` folder like `pakage-macos` expects, so you will need to rename the folder from `build_x86_64/Release` to `build_x86_64/install`)
@@ -167,7 +167,7 @@ $ ./.github/scripts/package-macos -c Release
 Use the CI scripts again
 
 ```sh
-$ ./.github/scripts/build-linux.sh
+./.github/scripts/build-linux.sh
 ```
 
 #### Arch Linux
@@ -183,7 +183,7 @@ To compile on Fedora, you need to manage the dependencies manually. See [docs/BU
 The plugin is available on FlatHub: https://github.com/flathub/com.obsproject.Studio.Plugin.BackgroundRemoval
 
 ```sh
-$ flatpak install com.obsproject.Studio.Plugin.BackgroundRemoval
+flatpak install com.obsproject.Studio.Plugin.BackgroundRemoval
 ```
 
 ### Windows
@@ -191,7 +191,7 @@ $ flatpak install com.obsproject.Studio.Plugin.BackgroundRemoval
 Use the CI scripts again, for example:
 
 ```powershell
-> .github/scripts/Build-Windows.ps1 -Target x64 -CMakeGenerator "Visual Studio 17 2022"
+.github/scripts/Build-Windows.ps1 -Target x64 -CMakeGenerator "Visual Studio 17 2022"
 ```
 
 The build should exist in the `./release` folder off the root. You can manually install the files in the OBS directory.
